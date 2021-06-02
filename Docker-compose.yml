@@ -7,7 +7,7 @@ services:
             - "5100-5199:5100"
         restart: always
         environment:
-            spring.profiles.active : ecs
+            - spring.profiles.active : ecs
         networks:
             - app-network
  
@@ -17,7 +17,7 @@ services:
             - "5200-5299:5200"
         restart: always
         environment:
-            spring.profiles.active : ecs
+            - spring.profiles.active : ecs
 
         networks:
             - app-network
@@ -28,9 +28,9 @@ services:
             - "5000-5099:5000"
         restart: always
         environment:
-            spring.profiles.active : ecs
-            COUPON-SERVICE-URI : coupon-service:5200
-            PRODUCT-SERVICE-URI : product-service:5100
+            - spring.profiles.active : ecs
+            - COUPON-SERVICE-URI : coupon-service:5200
+            - PRODUCT-SERVICE-URI : product-service:5100
         networks:
             - app-network
  
